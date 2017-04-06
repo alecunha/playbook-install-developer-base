@@ -1,0 +1,12 @@
+- hosts: 127.0.0.1
+  connection: local
+  sudo: yes
+  tasks: 
+  - name: Install JDK
+    apt: name=default-jdk state=latest
+
+  - name: Install Git
+    apt: name=git state=latest
+
+  - name: Install Maven
+    apt: name=maven state=latest
