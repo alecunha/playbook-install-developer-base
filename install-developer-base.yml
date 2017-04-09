@@ -1,7 +1,7 @@
 - hosts: 127.0.0.1
   connection: local
-  sudo: yes
-  tasks: 
+  become : yes
+  tasks:
   - name: Install JDK
     apt: name=default-jdk state=latest
 
@@ -10,3 +10,9 @@
 
   - name: Install Maven
     apt: name=maven state=latest
+  
+  - name: Add Repository Sublime
+    apt_repository: repo=ppa:webupd8team/sublime-text-3
+
+  - name: Install Sublime 3
+    apt: name=sublime-text-installer state=latest
