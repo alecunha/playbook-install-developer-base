@@ -11,8 +11,14 @@
   - name: Install Maven
     apt: name=maven state=latest
   
-  - name: Add Repository Sublime
+  - name: Add Sublime
     apt_repository: repo=ppa:webupd8team/sublime-text-3
 
-  - name: Install Sublime 3
+  - name: Install Sublime
     apt: name=sublime-text-installer state=latest
+
+  - name: Add Chrome 
+    apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main'
+  
+  - name: Install Chrome 
+    apt: name=google-chrome-stable
